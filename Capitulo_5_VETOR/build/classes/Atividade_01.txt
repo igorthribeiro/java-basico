@@ -1,0 +1,13 @@
+Atividade:
+Crie uma classe com o nome de Semana. Armazene nela um vetor
+com os dias da semana (Segunda...Domingo).
+No teste (TesteSemana), solicite ao usuário o dia da semana
+(int) e mostre o valor correspondente:
+
+Ex.1: 
+Informe o dia da semana: 1
+Segunda
+
+Ex.2:
+Informe o dia da semana: 6
+Sábado 
