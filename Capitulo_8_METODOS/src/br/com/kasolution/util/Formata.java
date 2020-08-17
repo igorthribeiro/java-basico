@@ -6,9 +6,14 @@ import java.time.format.DateTimeFormatter;
 
 public class Formata {
     
-    public static String data(LocalDate data) {
-        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+    public static String data(LocalDate data, boolean curto) {
+        String formato = (curto) ? "dd/MM/yyyy" : "dd 'de' MMMM 'de' yyyy, EEEE";
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern(formato);
         return dtf.format(data);
+    }
+    
+    public static String data(LocalDate data) {
+        return data(data, true);
     }
     
     public static String nota(double nota) {

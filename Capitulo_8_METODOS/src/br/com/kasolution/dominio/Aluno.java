@@ -11,15 +11,15 @@ public class Aluno {
     public String nome;
     public double[] notas;
     
-    public Aluno(String nome) {
+    public Aluno(String nome, LocalDate dataMatricula, double...notas) {
         this.codigo = ++ultimoCodigoGerado;
-        this.dataMatricula = LocalDate.now();
         this.nome = "# " + nome;
+        this.dataMatricula = dataMatricula;
+        this.notas = notas;
     }
     
     public Aluno(String nome, double...notas) {
-        this(nome);
-        this.notas = notas;
+        this(nome, LocalDate.now(), notas);
     }
     
     public double calculaMedia() {
@@ -32,10 +32,10 @@ public class Aluno {
     
     public void imprime() {
         System.out.println("Aluno: " + nome);
-        System.out.println("Matriculado em: " + data(dataMatricula));
+        System.out.println("Matriculado em: " + data(dataMatricula, false));
         StringBuilder s = new StringBuilder();
         for (double n : notas) {
-            s.append("[" + n + "] ");// [8.0] [7.5] [6.5]...
+            s.append("[" + nota(n) + "] ");// [8.0] [7.5] [6.5]...
         }
         System.out.println("Notas: " + s);
     }
